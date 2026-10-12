@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09070c">
+    <title>AI Помощник — Monster Cinema</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">MONSTER</div>
+            <div class="loader-title">CINEMA</div>
+            <div class="loader-line">
+                <div id="loaderProgress" class="loader-progress"></div>
+            </div>
+            <div id="loaderPercent" class="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <div id="mouseGlow"></div>
+    <div id="popcornContainer"></div>
+
+    <header class="header">
+        <div class="header-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-monster">MONSTER</span>
+                <span class="logo-cinema">CINEMA</span>
+            </a>
+
+            <button id="menuBtn" class="menu-btn" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="navLinks" class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="movies.html">Фильмы</a>
+                <a href="cinemas.html">Кинотеатры</a>
+                <a href="best.html">Лучшие</a>
+                <a href="ai.html" class="active">AI помощник</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <span class="section-label">MONSTER SMART</span>
+                <h1>AI ПОМОЩНИК</h1>
+                <p>
+                    Не знаешь, что посмотреть?
+                    Расскажи мне о своём настроении.
+                </p>
+            </div>
+        </section>
+
+        <section class="ai-section section">
+
+            <div class="ai-layout">
+
+                <aside class="ai-sidebar">
+
+                    <div class="ai-profile">
+                        <div class="ai-avatar">
+                            <div class="ai-avatar-core">AI</div>
+                        </div>
+
+                        <div>
+                            <h3>Monster AI</h3>
+                            <span>Онлайн</span>
+                        </div>
+                    </div>
+
+                    <div class="ai-sidebar-info">
+                        <h4>Я могу помочь тебе:</h4>
+
+                        <div class="ai-info-item">
+                            <span>🎬</span>
+                            <p>Найти фильм</p>
+                        </div>
+
+                        <div class="ai-info-item">
+                            <span>⭐</span>
+                            <p>Выбрать лучший фильм</p>
+                        </div>
+
+                        <div class="ai-info-item">
+                            <span>🎭</span>
+                            <p>Подобрать жанр</p>
+                        </div>
+
+                        <div class="ai-info-item">
+                            <span>🍿</span>
+                            <p>Выбрать фильм на вечер</p>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <div class="ai-chat">
+
+                    <div class="ai-chat-header">
+                        <div class="ai-chat-title">
+                            <div class="ai-status"></div>
+
+                            <div>
+                                <h2>Monster AI</h2>
+                                <p>Помощник по фильмам</p>
+                            </div>
+                        </div>
+
+                        <div class="ai-chat-badge">
+                            AI
+                        </div>
+                    </div>
+
+                    <div id="chatMessages" class="chat-messages">
+
+                        <div class="message message-ai">
+                            <div class="message-avatar">AI</div>
+
+                            <div class="message-content">
+                                <span class="message-name">Monster AI</span>
+
+                                <div class="message-bubble">
+                                    Привет! 👋<br><br>
+                                    Я помогу тебе выбрать фильм для просмотра.
+                                    Расскажи, что тебе хочется посмотреть сегодня.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="ai-suggestions">
+
+                        <button class="ai-suggestion" type="button">
+                            🎬 Что посмотреть сегодня?
+                        </button>
+
+                        <button class="ai-suggestion" type="button">
+                            😂 Хочу комедию
+                        </button>
+
+                        <button class="ai-suggestion" type="button">
+                            👻 Хочу ужастик
+                        </button>
+
+                        <button class="ai-suggestion" type="button">
+                            🔥 Хочу экшен
+                        </button>
+
+                        <button class="ai-suggestion" type="button">
+                            ❤️ Хочу фильм про любовь
+                        </button>
+
+                        <button class="ai-suggestion" type="button">
+                            ⭐ Лучшие фильмы
+                        </button>
+
+                    </div>
+
+                    <div class="ai-input-area">
+
+                        <input
+                            id="aiInput"
+                            type="text"
+                            placeholder="Напиши, какой фильм ты хочешь..."
+                            autocomplete="off"
+                        >
+
+                        <button id="aiSend" class="ai-send" type="button">
+                            <span>➤</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="ai-features section">
+
+            <div class="section-heading centered">
+                <div>
+                    <span class="section-label">SMART CINEMA</span>
+                    <h2>Что умеет AI?</h2>
+                </div>
+            </div>
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3>По настроению</h3>
+                    <p>
+                        Расскажи о своём настроении,
+                        и AI подберёт подходящий фильм.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>По жанру</h3>
+                    <p>
+                        Экшен, комедия, ужасы,
+                        фантастика или любой другой жанр.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>По рейтингу</h3>
+                    <p>
+                        Поможет найти самые популярные
+                        и высокооценённые фильмы.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🍿</div>
+                    <h3>Для компании</h3>
+                    <p>
+                        Подберёт фильм для друзей,
+                        семьи или вечернего просмотра.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-monster">MONSTER</span>
+                    <span class="logo-cinema">CINEMA</span>
+                </div>
+
+                <p>
+                    Твой кинотеатр.<br>
+                    Твои фильмы. Твоя атмосфера.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Навигация</h3>
+                <a href="index.html">Главная</a>
+                <a href="movies.html">Фильмы</a>
+                <a href="best.html">Лучшие</a>
+                <a href="cinemas.html">Кинотеатры</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Помощь</h3>
+                <a href="ai.html">AI помощник</a>
+                <a href="movies.html">Премьеры</a>
+                <a href="cinemas.html">Залы</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Monster Cinema</h3>
+                <p>Работаем каждый день</p>
+                <p>10:00 — 02:00</p>
+                <p>Tashkent, Uzbekistan</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Monster Cinema</span>
+            <span>Made by Nyura</span>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

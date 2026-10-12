@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09070c">
+    <title>Лучшие фильмы — Monster Cinema</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">MONSTER</div>
+            <div class="loader-title">CINEMA</div>
+            <div class="loader-line">
+                <div id="loaderProgress" class="loader-progress"></div>
+            </div>
+            <div id="loaderPercent" class="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <div id="mouseGlow"></div>
+    <div id="popcornContainer"></div>
+
+    <header class="header">
+        <div class="header-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-monster">MONSTER</span>
+                <span class="logo-cinema">CINEMA</span>
+            </a>
+
+            <button id="menuBtn" class="menu-btn" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="navLinks" class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="movies.html">Фильмы</a>
+                <a href="cinemas.html">Кинотеатры</a>
+                <a href="best.html" class="active">Лучшие</a>
+                <a href="ai.html">AI помощник</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <span class="section-label">MONSTER TOP</span>
+                <h1>ЛУЧШИЕ ФИЛЬМЫ</h1>
+                <p>
+                    Самые популярные фильмы, которые стоит посмотреть
+                    на большом экране.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">ТОП РЕЙТИНГ</span>
+                    <h2>Фильмы с высоким рейтингом</h2>
+                </div>
+
+                <span class="section-counter">TOP 15</span>
+            </div>
+
+            <div class="movie-row">
+                <div class="home-grid movie-grid"></div>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">ПОПУЛЯРНЫЕ</span>
+                    <h2>Выбор зрителей</h2>
+                </div>
+
+                <span class="section-counter">TOP 15</span>
+            </div>
+
+            <div class="movie-row">
+                <div class="home-grid movie-grid"></div>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">MONSTER CHOICE</span>
+                    <h2>Рекомендуем посмотреть</h2>
+                </div>
+
+                <span class="section-counter">TOP 15</span>
+            </div>
+
+            <div class="movie-row">
+                <div class="home-grid movie-grid"></div>
+            </div>
+
+        </section>
+
+        <section class="promo-section section">
+
+            <div class="promo-box">
+
+                <div class="promo-content">
+                    <span class="section-label">MONSTER EXPERIENCE</span>
+
+                    <h2>
+                        Нашёл свой фильм?
+                        <span>Выбирай место.</span>
+                    </h2>
+
+                    <p>
+                        Забронируй удобное место и наслаждайся
+                        просмотром в Monster Cinema.
+                    </p>
+
+                    <a href="cinemas.html" class="btn btn-primary">
+                        Выбрать кинотеатр
+                    </a>
+                </div>
+
+                <div class="promo-image">
+                    <img src="blob:https://chatgpt.com/c155682f-b819-4281-9a3a-5814abbeec11" alt="Monster Cinema">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-window">
+
+            <button class="modal-close" type="button" data-close>×</button>
+
+            <div id="bookingContent">
+
+                <div class="modal-header">
+                    <span class="section-label">MONSTER CINEMA</span>
+                    <h2 id="modalTitle">Бронирование</h2>
+                </div>
+
+                <div class="modal-movie">
+
+                    <div class="modal-movie-poster">
+                        <img src="https://i.pinimg.com/736x/ad/8f/5f/ad8f5f41c8f0202e26d4b51e5c77e8fb.jpg" alt="Фильм">
+                    </div>
+
+                    <div class="modal-movie-info">
+                        <h3 id="modalMovieTitle">Фильм</h3>
+                        <p id="modalMovieMeta">Информация</p>
+                        <div id="modalRating" class="modal-rating">
+                            ★ 0.0
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-select">
+                    <label for="modalHall">Выберите зал</label>
+
+                    <select id="modalHall">
+                        <option value="Monster Hall">Monster Hall</option>
+                        <option value="Purple Hall">Purple Hall</option>
+                        <option value="Black Hall">Black Hall</option>
+                        <option value="Premium Hall">Premium Hall</option>
+                        <option value="IMAX Hall">IMAX Hall</option>
+                        <option value="VIP Hall">VIP Hall</option>
+                    </select>
+                </div>
+
+                <div class="seat-section">
+
+                    <div class="screen">
+                        ЭКРАН
+                    </div>
+
+                    <div id="seatMap" class="seat-map"></div>
+
+                </div>
+
+                <div class="booking-summary">
+
+                    <div>
+                        <span>Выбрано мест:</span>
+                        <strong id="selectedSeats">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Итого:</span>
+                        <strong id="totalPrice">0 сум</strong>
+                    </div>
+
+                </div>
+
+                <button
+                    id="confirmBooking"
+                    class="btn btn-primary confirm-btn"
+                    type="button"
+                >
+                    Подтвердить
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    <span class="logo-monster">MONSTER</span>
+                    <span class="logo-cinema">CINEMA</span>
+                </div>
+
+                <p>
+                    Твой кинотеатр.<br>
+                    Твои фильмы. Твоя атмосфера.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+                <h3>Навигация</h3>
+                <a href="index.html">Главная</a>
+                <a href="movies.html">Фильмы</a>
+                <a href="best.html">Лучшие</a>
+                <a href="cinemas.html">Кинотеатры</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Помощь</h3>
+                <a href="ai.html">AI помощник</a>
+                <a href="movies.html">Премьеры</a>
+                <a href="cinemas.html">Залы</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Monster Cinema</h3>
+                <p>Работаем каждый день</p>
+                <p>10:00 — 02:00</p>
+                <p>Tashkent, Uzbekistan</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Monster Cinema</span>
+            <span>Made by Nyura</span>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
